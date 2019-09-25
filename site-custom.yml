@@ -1,0 +1,8 @@
+- name: kubernetes | addons
+  hosts: node
+  remote_user: ansible
+  environment: "{{ proxy_env }}"
+  roles:
+    - kube-addons
+  tags:
+    - kube-addons

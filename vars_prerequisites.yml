@@ -1,0 +1,20 @@
+---
+## VARS
+proxy_enabled: false
+deploy_certificates: true
+deploy_docker: true
+
+wipefs_device: true 
+
+docker_version: 18.09.7
+docker_storage_lvm: true                  #set to false, if you won't use LVM as docker storage 
+docker_lvm_setup: true                    #set to false, if you have a VG configured for docker
+docker_lvm_device: /dev/sdb               #should be a disk for docker storage
+docker_lvm_device_number: 1
+docker_volume_group: docker-vg            #volume group for docker storage
+insecure_registry:
+  - 127.0.0.1:5000
+
+## ALTERNATIVE MIRROR
+# mirror_server: mirror.e-unicred.com.br
+# kubernetes_install_url: https://{{ mirror_server }}/repo/linux/kubernetes/v{{ kubernetes_version }}

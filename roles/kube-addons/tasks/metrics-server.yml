@@ -1,0 +1,30 @@
+---
+- name: metrics-server | copying template
+  template:
+    src: "{{ item }}"
+    dest: /tmp/
+  with_items:
+    - aggregated-metrics-reader.yaml
+    - auth-delegator.yaml
+    - auth-reader.yaml
+    - resource-reader.yaml
+    - metrics-apiservice.yaml
+    - metrics-server-deployment.yaml
+    - metrics-server-service.yaml
+  when:
+    - k8s_master_main
+
+
+- name: metrics-server | install
+  shell: "kubectl apply -f /tmp/{{ item }}"
+  with_items:
+    - aggregated-metrics-reader.yaml
+    - auth-delegator.yaml
+    - auth-reader.yaml
+    - resource-reader.yaml
+    - metrics-apiservice.yaml
+    - metrics-server-deployment.yaml
+    - metrics-server-service.yaml
+  ignore_errors: true
+  when:
+    - k8s_master_main

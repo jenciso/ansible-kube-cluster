@@ -1,0 +1,13 @@
+---
+- name: docker-images | download calico
+  shell: "docker pull {{ item }}"
+  with_items:
+    - calico/cni:v3.6.1
+    - calico/node:v3.6.1
+
+
+- name: docker-images | download gluster
+  shell: "docker pull {{ item }}"
+  with_items:
+    - gluster/gluster-centos:gluster4u0_centos7
+  when: "'node_infra' in group_names" 

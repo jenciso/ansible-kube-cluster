@@ -1,0 +1,7 @@
+---
+- name: kubernetes | workers
+  hosts: node
+  remote_user: ansible
+  environment: "{{ proxy_env }}"
+  roles:
+    - calico

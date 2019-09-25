@@ -1,0 +1,7 @@
+---
+- name: label-node | apply label
+  shell: kubectl label nodes {{ item }} node-role.kubernetes.io/{{ hostvars[ item ].k8s_node_group_name }}=true --overwrite
+  ignore_errors: true
+  with_items: "{{ groups['node'] }}"
+  when:
+    - k8s_master_main

@@ -1,0 +1,5 @@
+---
+deploy_etcd: false
+deploy_certificates: false
+etcd_version: 3.3.11
+etcd_install_url: https://github.com/coreos/etcd/releases/download/v{{ etcd_version }}/etcd-v{{ etcd_version }}-linux-amd64.tar.gz

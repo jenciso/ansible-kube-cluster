@@ -1,0 +1,58 @@
+[KUBERNETES:children]
+lb
+master
+etcd
+node
+
+[lab:children]
+KUBERNETES
+
+[KUBERNETES:vars]
+env_site=lab
+lb_ip_apik8s=10.0.5.8
+lb_ip_services=10.0.5.22
+lb_ip_internal_ingress=10.0.5.23
+lb_ip_external_ingress=10.0.5.24
+lb_ip_istio_ingress=10.0.5.25
+
+
+[lb:vars]
+keepalived_router_id=37      # Any value between 0..255
+keepalived_check_process=haproxy
+
+
+[lb]
+lb311.enciso.site  ipv4addr=10.0.5.11  keepalived_role=MASTER keepalived_unicast_peer=10.0.5.12
+lb312.enciso.site  ipv4addr=10.0.5.12  keepalived_role=BACKUP keepalived_unicast_peer=10.0.5.11
+
+[master]
+lb321.enciso.site  ipv4addr=10.0.5.27  k8s_master_main=true
+lb322.enciso.site  ipv4addr=10.0.5.28  k8s_master_main=false
+lb323.enciso.site  ipv4addr=10.0.5.29  k8s_master_main=false
+
+[etcd]
+lb321.enciso.site  ipv4addr=10.0.5.27
+lb322.enciso.site  ipv4addr=10.0.5.28
+lb323.enciso.site  ipv4addr=10.0.5.29
+
+[node_master]
+lb321.enciso.site  ipv4addr=10.0.5.27  k8s_node_group_name=master
+lb322.enciso.site  ipv4addr=10.0.5.28  k8s_node_group_name=master
+lb323.enciso.site  ipv4addr=10.0.5.29  k8s_node_group_name=master
+
+[node_infra]
+lb341.enciso.site  ipv4addr=10.0.5.41  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
+lb342.enciso.site  ipv4addr=10.0.5.42  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
+lb343.enciso.site  ipv4addr=10.0.5.43  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
+
+[glusterfs:children]
+node_infra
+
+[node_compute]
+lb351.enciso.site  ipv4addr=10.0.5.51  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
+lb352.enciso.site  ipv4addr=10.0.5.52  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
+
+[node:children]
+node_master
+node_infra
+node_compute
