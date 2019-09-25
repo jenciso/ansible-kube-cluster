@@ -28,7 +28,7 @@ kubectl create ns glusterfs
           "node": {
             "hostnames": {
               "manage": [
-                "dcbvm090pr347.e-unicred.com.br"
+                "lb347.enciso.site"
               ],
               "storage": [
                 "10.64.12.47"
@@ -44,7 +44,7 @@ kubectl create ns glusterfs
           "node": {
             "hostnames": {
               "manage": [
-                "dcbvm090pr348.e-unicred.com.br"
+                "lb348.enciso.site"
               ],
               "storage": [
                 "10.64.12.48"
@@ -60,7 +60,7 @@ kubectl create ns glusterfs
           "node": {
             "hostnames": {
               "manage": [
-                "dcbvm090pr349.e-unicred.com.br"
+                "lb349.enciso.site"
               ],
               "storage": [
                 "10.64.12.49"

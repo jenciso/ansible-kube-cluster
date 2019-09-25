@@ -5,9 +5,9 @@
 
 ### STEPS
 
-Download the latest kubernetes version in our mirror server `https://mirror.e-unicred.com.br/repo/linux/kubernetes`. 
+Download the latest kubernetes version in our mirror server `https://mirror.enciso.site/repo/linux/kubernetes`. 
 
-* To do that, run the following script into the server `dcbvm090pr011.e-unicred.com.br`
+* To do that, run the following script into the server `lb011.enciso.site`
 
 ```sh
 cd /public/repo/linux/kubernetes
