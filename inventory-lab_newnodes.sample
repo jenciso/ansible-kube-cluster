@@ -22,35 +22,35 @@ keepalived_check_process=haproxy
 
 
 [lb]
-lb311.enciso.site  ipv4addr=10.0.5.11  keepalived_role=MASTER keepalived_unicast_peer=10.0.5.12
-lb312.enciso.site  ipv4addr=10.0.5.12  keepalived_role=BACKUP keepalived_unicast_peer=10.0.5.11
+lb311.tre-rs.gov.br  ipv4addr=10.0.5.11  keepalived_role=MASTER keepalived_unicast_peer=10.0.5.12
+lb312.tre-rs.gov.br  ipv4addr=10.0.5.12  keepalived_role=BACKUP keepalived_unicast_peer=10.0.5.11
 
 [master]
-lb321.enciso.site  ipv4addr=10.0.5.27  k8s_master_main=true
-lb322.enciso.site  ipv4addr=10.0.5.28  k8s_master_main=false
-lb323.enciso.site  ipv4addr=10.0.5.29  k8s_master_main=false
+lb321.tre-rs.gov.br  ipv4addr=10.0.5.27  k8s_master_main=true
+lb322.tre-rs.gov.br  ipv4addr=10.0.5.28  k8s_master_main=false
+lb323.tre-rs.gov.br  ipv4addr=10.0.5.29  k8s_master_main=false
 
 [etcd]
-lb321.enciso.site  ipv4addr=10.0.5.27
-lb322.enciso.site  ipv4addr=10.0.5.28
-lb323.enciso.site  ipv4addr=10.0.5.29
+lb321.tre-rs.gov.br  ipv4addr=10.0.5.27
+lb322.tre-rs.gov.br  ipv4addr=10.0.5.28
+lb323.tre-rs.gov.br  ipv4addr=10.0.5.29
 
 [node_master]
-lb321.enciso.site  ipv4addr=10.0.5.27  k8s_node_group_name=master
-lb322.enciso.site  ipv4addr=10.0.5.28  k8s_node_group_name=master
-lb323.enciso.site  ipv4addr=10.0.5.29  k8s_node_group_name=master
+lb321.tre-rs.gov.br  ipv4addr=10.0.5.27  k8s_node_group_name=master
+lb322.tre-rs.gov.br  ipv4addr=10.0.5.28  k8s_node_group_name=master
+lb323.tre-rs.gov.br  ipv4addr=10.0.5.29  k8s_node_group_name=master
 
 [node_infra]
-lb341.enciso.site  ipv4addr=10.0.5.41  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
-lb342.enciso.site  ipv4addr=10.0.5.42  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
-lb343.enciso.site  ipv4addr=10.0.5.43  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
+lb341.tre-rs.gov.br  ipv4addr=10.0.5.41  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
+lb342.tre-rs.gov.br  ipv4addr=10.0.5.42  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
+lb343.tre-rs.gov.br  ipv4addr=10.0.5.43  k8s_node_group_name=infra  glusterfs_device="/dev/sdc"
 
 [glusterfs:children]
 node_infra
 
 [node_compute]
-lb351.enciso.site  ipv4addr=10.0.5.51  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
-lb352.enciso.site  ipv4addr=10.0.5.52  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
+lb351.tre-rs.gov.br  ipv4addr=10.0.5.51  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
+lb352.tre-rs.gov.br  ipv4addr=10.0.5.52  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
 
 [node:children]
 node_master
@@ -59,5 +59,5 @@ node_compute
 new_nodes
 
 [new_nodes]
-lb353.enciso.site  ipv4addr=10.0.5.53  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
+lb353.tre-rs.gov.br  ipv4addr=10.0.5.53  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
 

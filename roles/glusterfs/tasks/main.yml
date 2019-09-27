@@ -62,7 +62,9 @@
   when:
     - k8s_master_main
     - deploy_glusterfs
-  tags: glusterfs_config
+  tags: 
+    - glusterfs_config
+    - glusterfs_repair
 
 
 
@@ -87,7 +89,9 @@
   when:
     - k8s_master_main
     - deploy_glusterfs
-  tags: glusterfs_config
+  tags: 
+    - glusterfs_config
+    - glusterfs_repair
 
 
 - name: glusterfs | Create storageClass default
@@ -111,3 +115,4 @@
   when:
     - k8s_master_main
     - deploy_glusterfs
+    - glusterfs_repair

@@ -11,7 +11,7 @@ deploy_prometheus: true
 deploy_istio: true
 
 ## Mirror URL's
-# mirror_server: mirror.enciso.site
+# mirror_server: mirror.tre-rs.gov.br
 # etcd_install_url: https://{{ mirror_server }}/repo/linux/etcd/etcd-v{{ etcd_version }}-linux-amd64.tar.gz
 # kubernetes_install_url: https://{{ mirror_server }}/repo/linux/kubernetes/v{{ kubernetes_version }}
 # cni_plugins_url_install : https://{{ mirror_server }}/repo/linux/kubernetes/network-plugins/cni-plugins-amd64-v{{ cni_plugins_version }}.tgz

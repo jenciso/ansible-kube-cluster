@@ -16,5 +16,5 @@ insecure_registry:
   - 127.0.0.1:5000
 
 ## ALTERNATIVE MIRROR
-# mirror_server: mirror.enciso.site
+# mirror_server: mirror.tre-rs.gov.br
 # kubernetes_install_url: https://{{ mirror_server }}/repo/linux/kubernetes/v{{ kubernetes_version }}

@@ -5,9 +5,9 @@
 
 ### STEPS
 
-Download the latest kubernetes version in our mirror server `https://mirror.enciso.site/repo/linux/kubernetes`. 
+Download the latest kubernetes version in our mirror server `https://mirror.tre-rs.gov.br/repo/linux/kubernetes`. 
 
-* To do that, run the following script into the server `lb011.enciso.site`
+* To do that, run the following script into the server `lb011.tre-rs.gov.br`
 
 ```sh
 cd /public/repo/linux/kubernetes

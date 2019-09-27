@@ -12,7 +12,7 @@ new_nodes
 ...
 ...
 [new_nodes]
-lb343.enciso.site  ipv4addr=10.64.13.220  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
+lb343.tre-rs.gov.br  ipv4addr=10.64.13.220  k8s_node_group_name=compute  docker_lvm_setup=true  max_pods_per_node=220
 ```
 
 * Run the playbook

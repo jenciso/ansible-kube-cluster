@@ -28,7 +28,7 @@ kubectl create ns glusterfs
           "node": {
             "hostnames": {
               "manage": [
-                "lb347.enciso.site"
+                "lb347.tre-rs.gov.br"
               ],
               "storage": [
                 "10.64.12.47"
@@ -44,7 +44,7 @@ kubectl create ns glusterfs
           "node": {
             "hostnames": {
               "manage": [
-                "lb348.enciso.site"
+                "lb348.tre-rs.gov.br"
               ],
               "storage": [
                 "10.64.12.48"
@@ -60,7 +60,7 @@ kubectl create ns glusterfs
           "node": {
             "hostnames": {
               "manage": [
-                "lb349.enciso.site"
+                "lb349.tre-rs.gov.br"
               ],
               "storage": [
                 "10.64.12.49"

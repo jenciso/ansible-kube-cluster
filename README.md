@@ -39,7 +39,7 @@ Minimal Setup:
 
 ### First of all 
 
-Create a domain for your apiserver. Ex. `apik8s-lab.enciso.site` and set the var `api_domain` into the `group_vars/all/main.yml` file 
+Create a domain for your apiserver. Ex. `apik8s-lab.tre-rs.gov.br` and set the var `api_domain` into the `group_vars/all/main.yml` file 
 
 ### Install
 
